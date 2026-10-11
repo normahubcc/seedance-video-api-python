@@ -1,0 +1,25 @@
+name: Keepalive Schedule
+
+on:
+  schedule:
+    # Runs every Monday at 04:00 UTC
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update keepalive status
+        run: |
+          date -u +"%Y-%m-%d %H:%M:%S UTC" > .github/keepalive-pulse.txt
+          git config --local user.email "bot@normahub.cc"
+          git config --local user.name "NormaHub Automated Bot"
+          git add .github/keepalive-pulse.txt
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore(pulse): automatic activity keepalive [skip ci]"
+          git push

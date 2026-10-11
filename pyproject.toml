@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seedance-video-api"
+version = "0.2.0"
+description = "Python SDK & CLI для генерации видео нейросетями SeeDance 2.5 / 2.0 и Grok Video через NormaHub API без VPN"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "NormaHub Team", email = "manager@normahub.cc" }
+]
+requires-python = ">=3.9"
+keywords = [
+    "seedance",
+    "seedance-video",
+    "ai-video",
+    "grok-video",
+    "normahub",
+    "video-generation",
+    "openai-compatible",
+    "russia-ai"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Video",
+]
+dependencies = []
+
+[project.scripts]
+seedance = "seedance.cli:main"
+
+[project.urls]
+Homepage = "https://normahub.cc"
+Documentation = "https://normahub.cc/company/articles"
+Repository = "https://github.com/normahubcc/seedance-video-api-python"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
