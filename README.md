@@ -9,6 +9,7 @@
 [![Release](https://img.shields.io/badge/release-v0.2.0-blue?style=flat-square)](https://github.com/normahubcc/seedance-video-api-python/releases)
 [![Python](https://img.shields.io/badge/python-3.9+-blue?style=flat-square)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/normahubcc/seedance-video-api-python/blob/main/examples/seedance_video_quickstart.ipynb)
 
 Python SDK и CLI для генерации видео нейросетями **SeeDance 2.5 / 2.0** и **xAI Grok Imagine Video** через API [NormaHub](https://normahub.cc).
 
@@ -53,6 +54,8 @@ export NORMAHUB_API_KEY="nr_hub_..."
 ---
 
 ## Примеры использования
+
+> 🚀 **Интерактивный запуск в 1 клик:** Откройте готовый Jupyter-блокнот в Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/normahubcc/seedance-video-api-python/blob/main/examples/seedance_video_quickstart.ipynb)
 
 ### 1. Синхронная генерация (Text-to-Video)
 
