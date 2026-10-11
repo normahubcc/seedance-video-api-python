@@ -1,6 +1,12 @@
+<p align="center">
+  <a href="https://normahub.cc">
+    <img src="./docs/images/logo.png" alt="NormaHub" width="120" />
+  </a>
+</p>
+
 # SeeDance & Grok Video Python SDK
 
-[![PyPI Version](https://img.shields.io/pypi/v/seedance-video-api?style=flat-square)](https://pypi.org/project/seedance-video-api/)
+[![Release](https://img.shields.io/badge/release-v0.2.0-blue?style=flat-square)](https://github.com/normahubcc/seedance-video-api-python/releases)
 [![Python](https://img.shields.io/badge/python-3.9+-blue?style=flat-square)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
