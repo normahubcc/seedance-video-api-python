@@ -18,7 +18,7 @@ Python SDK и CLI для генерации видео нейросетями **
 
 ## Возможности
 
-- **Zero dependencies:** работает на стандартной библиотеке Python 3.9+ (`urllib` + `asyncio`). Никаких конфликтов с версиями `requests` или `aiohttp`.
+- **Без сторонних зависимостей:** работает на стандартной библиотеке Python 3.9+ (`urllib` + `asyncio`), без конфликтов версий `requests` или `aiohttp`.
 - **Синхронный и асинхронный клиенты:** `NormaVideoClient` для скриптов и `AsyncNormaVideoClient` для FastAPI, Celery, aiogram.
 - **Image-to-Video (I2V):** автоматическая конвертация локальных изображений (`.png`, `.jpg`, `.webp`) в Base64 Data URI или передача `image_url`.
 - **Автоматический retry:** повтор запросов при временных сетевых сбоях и ошибках 502/503/524 с экспоненциальным backoff.
