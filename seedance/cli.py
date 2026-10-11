@@ -61,44 +61,44 @@ def _cli_progress_fallback(task: VideoTask) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Generate AI videos with SeeDance & Grok via NormaHub API (No VPN, RUB billing)."
+        description="Генерация AI-видео через модели SeeDance и Grok по API NormaHub."
     )
-    parser.add_argument("prompt", help="Text prompt describing the scene")
+    parser.add_argument("prompt", help="Текстовое описание сцены (промпт)")
     parser.add_argument(
         "-i", "--image",
-        help="Path to local image or image URL for Image-to-Video generation"
+        help="Путь к локальному изображению или URL для режима Image-to-Video"
     )
     parser.add_argument(
         "-o", "--output",
         default="output.mp4",
-        help="Target local output file path (default: output.mp4)"
+        help="Путь к результирующему файлу MP4 (по умолчанию: output.mp4)"
     )
     parser.add_argument(
         "-m", "--model",
         default="seedance-2.5",
         choices=[m.value for m in VideoModel],
-        help="Video model to use (default: seedance-2.5)"
+        help="Модель генерации видео (по умолчанию: seedance-2.5)"
     )
     parser.add_argument(
         "-d", "--duration",
         type=int,
         default=5,
-        help="Duration in seconds (default: 5)"
+        help="Длительность ролика в секундах (по умолчанию: 5)"
     )
     parser.add_argument(
         "--aspect-ratio",
         default="16:9",
-        help="Aspect ratio (e.g. 16:9, 9:16, 1:1) (default: 16:9)"
+        help="Соотношение сторон: 16:9, 9:16, 1:1 (по умолчанию: 16:9)"
     )
     parser.add_argument(
         "-t", "--timeout",
         type=int,
         default=300,
-        help="Timeout in seconds to wait for generation (default: 300)"
+        help="Таймаут ожидания рендера в секундах (по умолчанию: 300)"
     )
     parser.add_argument(
         "--api-key",
-        help="NormaHub API key (defaults to NORMAHUB_API_KEY environment variable)"
+        help="API-ключ NormaHub (по умолчанию берется из переменной NORMAHUB_API_KEY)"
     )
 
     args = parser.parse_args()
