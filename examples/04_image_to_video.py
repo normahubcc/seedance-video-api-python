@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """
-Пример 4: Оживление статичных изображений (Image-to-Video) с SeeDance 2.5 / Grok Video.
-Демонстрирует автоматическую кодировку локальных файлов в Base64 Data URI и передачу image_url.
+Пример Image-to-Video генерации.
+Поддерживает локальные файлы (кодируются в Base64 Data URI) и публичные URL.
 """
 
 from pathlib import Path
 from seedance import AsyncNormaVideoClient, NormaVideoClient
 
-# 1. Синхронный вариант (простой скрипт):
 def sync_image_to_video_demo():
-    print("[*] --- Синхронный Image-to-Video ---")
     client = NormaVideoClient()
 
     # Путь к вашей картинке (PNG, JPG, WEBP)
