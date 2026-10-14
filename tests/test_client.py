@@ -472,6 +472,28 @@ class TestCLI(unittest.TestCase):
         finally:
             Path(temp_out.name).unlink(missing_ok=True)
 
+    @patch("seedance.cli.NormaVideoClient")
+    def test_cli_status_subcommand(self, mock_client_cls):
+        mock_instance = MagicMock()
+        mock_client_cls.return_value = mock_instance
+        mock_task = VideoTask(
+            id="task_status_77",
+            model="seedance-2.5",
+            prompt="Prompt",
+            status=TaskStatus.COMPLETED,
+            created_at=1700000000,
+            video_url="https://api.normahub.cc/out.mp4",
+        )
+        mock_instance.get_status.return_value = mock_task
+
+        exit_code = cli_main(["status", "task_status_77", "--api-key", "nr_test_key"])
+        self.assertEqual(exit_code, 0)
+        mock_instance.get_status.assert_called_once_with("task_status_77")
+
+    def test_cli_models_subcommand(self):
+        exit_code = cli_main(["models"])
+        self.assertEqual(exit_code, 0)
+
 
 if __name__ == "__main__":
     unittest.main()
